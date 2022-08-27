@@ -1,0 +1,8 @@
+.master {
+    width: '10px';
+}
+.slave {
+    width: '15px';
+    color: yellow;
+    background-color: blue;
+}

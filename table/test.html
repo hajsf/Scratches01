@@ -1,0 +1,42 @@
+<script defer src="test.js"></script>
+<script defer src="my-input.js"></script>
+hjvjhvgh
+ggsdg
+bsffg
+nfgnn
+ndfdngdh
+nghn
+<br>
+<my-input data-text="hi"></my-input>
+<br>
+<input id="hi" placeholder="hi"/>
+<br>
+<my-input data-text="hello"></my-input>
+<popup-info data-text="hello">test</popup-info>
+<br>
+<br>
+
+<br>
+<popup-info></popup-info>
+<template id="tmpl">
+    <style> p { font-weight: bold; } </style>
+    <p id="message"></p>
+  </template>
+  
+  <div id="elem">Click me</div>
+  
+  <script>
+    elem.onclick = function() {
+      elem.attachShadow({mode: 'open'});
+  
+      elem.shadowRoot.append(tmpl.content.cloneNode(true)); // (*)
+  
+      elem.shadowRoot.getElementById('message').innerHTML = "Hello from the shadows!";
+    };
+  </script>
+
+<table class="table table-hover">
+    <thead><tr><th>First Name</th><th>Last Name</th></tr></thead>
+    <tr><td is='my-cell' data-text="fname"></td><td is='my-cell' data-text="lname"></td></tr>
+    <tr><td><my-input data-text="fname"></my-input></td><td><my-input data-text="lname"></my-input></td></tr>
+</table>
