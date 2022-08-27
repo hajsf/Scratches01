@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Counter: <span id="counter_val"></span></h1>
+  <!-- 
+  <object data="http://localhost:1234/sse/dashboard" width="300" height="200" alt="Cam streaming"></object>
+  -->
+  <script>
+    const eventSource = new EventSource("http://localhost:1235/sse");
+    // const eventSource = new EventSource("http://localhost:8000/api/events", { withCredentials: true });
+    // a withCredentials property can be set to true, which means that the Cookie will be sent together
+    eventSource.onmessage = function (event) {
+        var counter = JSON.parse(event.data);
+        document.getElementById("counter_val").innerHTML = counter;
+    }
+
+    // OR
+    /*
+    eventSource.addEventListener("message", (event) => {
+        // "event.data" is a string
+        const data = JSON.parse(event.data);
+  
+        // Prints whatever was sent by the server
+        console.log(data);
+    });
+    */
+
+    // Custom event handler
+    handleReceiveMessage = (event) => console.log(event.data);
+        eventSource.addEventListener("join", handleReceiveMessage);
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cam Streaming with gocv</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <!-- <div id ="content"></div> 
+        <object data="http://localhost:8080/camera" width="300" height="200" alt="Cam streaming"></object>
+
+        <object id="content" width="300" height="200" alt="Cam streaming"></object>
+-->
+        <img id="photo" alt="Girl in a jacket" width="500" height="600">
+
+    </body>
+    <script>
+     /*   (function(){
+                document.getElementById("content").innerHTML='<object type="text/html" data="http://localhost:8080/cam" ></object>';
+        })();
+        */
+      
+      /*      var source = new EventSource("http://localhost:8080/camera");
+            source.onmessage = function (event) {
+                var data = JSON.parse(event.data);
+                document.getElementById("content").data = data;
+            }
+*/
+        const myRequest = new Request('http://localhost:8080/blue/', {
+        method: 'GET',
+        headers: new Headers(),
+        type: "arraybuffer",
+        mode: 'cors',
+        cache: 'default',
+        });
+
+        fetch(myRequest)
+            .then(response => {
+                console.log("hi ") 
+                u = response.blob()
+                console.log(u)
+                return u
+                })
+            .then(blob => {
+                var reader = new FileReader();
+                reader.readAsDataURL(blob); 
+                reader.onloadend = function() {
+                    var imageUrl = reader.result; 
+                    console.log("test")  
+                    console.log(imageUrl)              
+                    var img = document.querySelector("#photo");
+                    img.src = imageUrl;
+                }
+            });
+    </script>
+</html>
