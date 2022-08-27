@@ -1,0 +1,55 @@
+{{define "indexPage"}}
+    {{template "header"}}
+    <script>
+    sap.ui.require([
+    	"sap/m/Button",
+	    "sap/m/MessageToast"
+        ], function (Button, MessageToast) {
+	    "use strict";
+
+        var btn = new Button({
+            icon: "sap-icon://sap-ui5",
+            text: "Ready to go...",
+			type: "Emphasized",
+			class: "sapUiSmallMargin",
+            press: function () {
+                MessageToast.show("Hello World!");
+            }
+        }).placeAt("content"); 
+    });
+    </script>
+    <body class='sapUiBody'>
+        <h1>view 1</h1>
+
+        <h1>{{.PageTitle}}</h1>
+        <script>
+            var todo = {{.Todos}};
+            console.log(todo[0])
+            todo.forEach(item => sap.ui.require(["sap/m/StandardListItem"], (e) => new e({  // e => element => StandardListItem
+                            icon: item.Done ? "sap-icon://complete" : "sap-icon://pending", //  ternary operator
+                            title: item.Title
+                    }).placeAt("content")));
+        </script>
+        {{range .Todos}}
+            {{if .Done}}
+            <script>
+                sap.ui.require(["sap/m/StandardListItem"], (e) => new e({  // e => element => StandardListItem
+                            icon: "sap-icon://complete", 
+                            title: "{{.Title}}"
+                    }).placeAt("content"))
+            </script>
+            {{else}}
+            <script>
+                sap.ui.require(["sap/m/StandardListItem"], (e) => new e({  // e => element => StandardListItem
+                            icon: "sap-icon://pending",
+                            title: "{{.Title}}"
+                    }).placeAt("content2"))
+            </script>
+            {{end}}
+        {{end}}
+
+    <div id='content' ></div>
+    <h5>Rejected</h5>
+    <div id='content2' ></div>
+    {{template "footer"}}
+{{end}}

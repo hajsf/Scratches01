@@ -1,0 +1,28 @@
+syntax = "proto3";
+package chat;
+option go_package = "github.com/hajsf/grpc-simple/chat";
+
+message MessageRequest {
+  string body = 1;
+}
+
+message MessageResponse {
+    string body = 1;
+}
+
+message Message {
+    string body = 1;
+}
+
+service ChatService {
+  rpc SayHello(MessageRequest) returns (MessageResponse) {}
+  rpc BroadcastMessage(Message) returns (Message) {}
+}
+
+// example source: https://tutorialedge.net/golang/go-grpc-beginners-tutorial/
+// https://github.com/protocolbuffers/protobuf/releases/
+// go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+// go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+// add ..\gopath\bin to your path, so that these execuatable files be recognized
+
+// protoc --go_out=chat --go_opt=paths=source_relative --go-grpc_out=chat --go-grpc_opt=paths=source_relative  --go-grpc_opt=require_unimplemented_servers=false chat.proto
