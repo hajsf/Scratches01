@@ -1,0 +1,121 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "System.Speech/7.0.0-preview.5.22301.12": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Speech.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "System.Speech/7.0.0-preview.5.22301.12": {
+      "sha512": "Fh8vTmqQvxjo5v98jTlX8IS65hOYnWqT6xQiBzmQU5Th+70yKUCXg7/kgScCtdyEPGgbn2Dwof+Wk9YVHV6Flw==",
+      "type": "package",
+      "path": "system.speech/7.0.0-preview.5.22301.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Speech.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.Speech.dll",
+        "lib/net6.0/System.Speech.xml",
+        "lib/net7.0/System.Speech.dll",
+        "lib/net7.0/System.Speech.xml",
+        "lib/netstandard2.0/System.Speech.dll",
+        "lib/netstandard2.0/System.Speech.xml",
+        "runtimes/win/lib/net6.0/System.Speech.dll",
+        "runtimes/win/lib/net6.0/System.Speech.xml",
+        "runtimes/win/lib/net7.0/System.Speech.dll",
+        "runtimes/win/lib/net7.0/System.Speech.xml",
+        "system.speech.7.0.0-preview.5.22301.12.nupkg.sha512",
+        "system.speech.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "System.Speech >= 7.0.0-preview.5.22301.12"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\hasan.y\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\s\\MyApp\\MyApp.csproj",
+      "projectName": "MyApp",
+      "projectPath": "D:\\s\\MyApp\\MyApp.csproj",
+      "packagesPath": "C:\\Users\\hasan.y\\.nuget\\packages\\",
+      "outputPath": "D:\\s\\MyApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\hasan.y\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "System.Speech": {
+            "target": "Package",
+            "version": "[7.0.0-preview.5.22301.12, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

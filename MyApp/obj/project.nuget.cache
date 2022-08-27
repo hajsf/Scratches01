@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "K4xBfndLgpm8taSOVoMXjVfm/PDmLIyfw2zwKHInfNay4nLWaoW1jBA+67Fsk0zkFf/uiecaEBAtYtjThQ0SOw==",
+  "success": true,
+  "projectFilePath": "D:\\s\\MyApp\\MyApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hasan.y\\.nuget\\packages\\system.speech\\7.0.0-preview.5.22301.12\\system.speech.7.0.0-preview.5.22301.12.nupkg.sha512"
+  ],
+  "logs": []
+}

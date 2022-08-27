@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\s\\MyApp\\MyApp.csproj": {}
+  },
+  "projects": {
+    "D:\\s\\MyApp\\MyApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\s\\MyApp\\MyApp.csproj",
+        "projectName": "MyApp",
+        "projectPath": "D:\\s\\MyApp\\MyApp.csproj",
+        "packagesPath": "C:\\Users\\hasan.y\\.nuget\\packages\\",
+        "outputPath": "D:\\s\\MyApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hasan.y\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Speech": {
+              "target": "Package",
+              "version": "[7.0.0-preview.5.22301.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

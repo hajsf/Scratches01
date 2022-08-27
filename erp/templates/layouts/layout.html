@@ -1,0 +1,39 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="./onsenui/css/onsen-css-components.min.css">
+  <script src="./onsenui/js/onsenui.min.js"></script>
+</head>
+<body>
+    <ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+    <div class="toolbar toolbar--material">
+        <div class="toolbar__left toolbar--material__left">
+          <span class="toolbar-button toolbar-button--material">
+            <i class="zmdi zmdi-menu"></i>
+          </span>
+        </div>
+        <div class="toolbar__center toolbar--material__center">
+          Title
+        </div>
+        <div class="toolbar__right toolbar--material__right">
+          <span class="toolbar-button toolbar-button--material">
+            <i class="zmdi zmdi-search"></i>
+          </span>
+          <span class="toolbar-button toolbar-button--material">
+            <i class="zmdi zmdi-favorite"></i>
+          </span>
+          <span class="toolbar-button toolbar-button--material">
+            <i class="zmdi zmdi-more-vert"></i>
+          </span>
+        </div>
+      </div>
+    <ons-button onclick="ons.notification.alert('Hello World!')">Click Me</ons-button>
+</body>
+{{end}}
+
+{{define "footer"}}
+    </body>
+</html>
+{{end}}
