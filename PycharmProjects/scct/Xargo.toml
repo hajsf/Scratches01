@@ -1,0 +1,15 @@
+# Xargo.toml
+[dependencies.std]
+features = ["force_alloc_system"] # Disable jemalloc the Xargo way.
+
+# $ rustup default nightly
+# $ rustup component add rust-src
+# $ cargo install xargo
+
+# Find your host's target triple.
+# $ rustc -vV
+
+# host: x86_64-apple-darwin
+
+# Use that target triple when building with Xargo.
+# $ xargo build --target x86_64-apple-darwin --release

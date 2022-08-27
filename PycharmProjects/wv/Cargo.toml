@@ -1,0 +1,16 @@
+[package]
+name = "wv"
+version = "0.1.0"
+authors = ["Hasan Yousef"]
+edition = "2018"
+
+[dependencies]
+opencv = {version = "0.34", features = ["buildtime-bindgen"]}
+web-view = "0.6.2"
+rocket = "0.4.4"
+rocket_contrib = "0.4.4"
+rust-embed = {version = "5.5.1", features = ["interpolate-folder-path"]}
+serde = "1.0.106"
+serde_json = "1.0.52"
+serde_derive = "1.0.106"
+regex = {version = "1.3.7", features = ["std"]}
