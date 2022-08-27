@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <header>
+        <script>
+            window.addEventListener("resize", function(){
+        		window.resizeTo(1000, 800);
+             });
+
+            document.addEventListener('keydown', function(event) {
+            if(event.keyCode == 37) {
+                external.invoke('Run openCV');
+            }
+            else if(event.keyCode == 39) {
+                alert('Right was pressed');
+            }
+        });
+
+        function myFunction(paramOne, paramTwo) {
+            return (paramOne+paramTwo);
+        }
+        </script>
+
+
+            <script>
+      if (!('webkitSpeechRecognition' in window) && !('SpeechRecognitionn' in window)) {
+            alert("not supported");
+             console.log("Speech API not supported here…");
+      } else { //Let’s do some cool stuff :)
+          alert("supported");
+          var recognition = new SpeechRecognition() || new webkitSpeechRecognition(); //That is the object that will manage our whole recognition process.
+          recognition.continuous = true;   //Suitable for dictation.
+          recognition.interimResults = true;  //If we want to start receiving results even if they are not final.
+          //Define some more additional parameters for the recognition:
+          recognition.lang = "en-US";
+          recognition.maxAlternatives = 1; //Since from our experience, the highest result is really the best...
+          recognition.start();
+      }
+
+      recognition.onstart = function() {
+          console.log("I'm listening");
+      };
+
+      recognition.onend = function() {
+          console.log("stopped/ended");
+          recognition.start();
+      };
+
+      recognition.onresult = function(event) { //the event holds the results
+          if (typeof(event.results) === 'undefined') { //Something is wrong…
+              recognition.stop();
+              return;
+          }
+
+          for (var i = event.resultIndex; i < event.results.length; ++i) {
+              document.querySelector("#demo").innerHTML = event.results[i][0].transcript;
+              if (event.results[i].isFinal) { //Final results
+                 //           alert("hi");
+               // var msg = new SpeechSynthesisUtterance(event.results[i][0].transcript);
+                window.speechSynthesis.speak(event.results[i][0].transcript);
+                 // document.querySelector("#demo").innerHTML = event.results[i][0].transcript;
+                  console.log("final results: " + event.results[i][0].transcript);   //Of course – here is the place to do useful things with the results.
+              } else {   //i.e. interim...
+                  console.log("interim results: " + event.results[i][0].transcript);  //You can use these results to give the user near real time experience.
+              }
+          } //end for loop
+      };
+
+      recognition.stop();
+
+      recognition.onspeechstart = function() {};
+
+      recognition.onspeechend = function() {};
+
+      recognition.onnomatch = function(event) {};
+
+      recognition.onerror = function(event) {};
+
+      function startButton(event) {
+          recognition.start();
+          start_img.src = 'https://speechlogger.appspot.com/images/micslash2.png'; //We change the image to a slashed until the user approves the browser to listen and recognition actually starts. Then – we’ll change the image to ‘mic on’.
+      }
+    </script>
+    </header>
+	<body>
+        <button occlick="startButton()">Test</button>
+        <button onclick="external.invoke('Run openCV')">OpenCV</button>
+        <button onclick="external.invoke('Stop openCV')">Stop</button>
+        <br>
+        <div id="demo"></div>
+        <!-- img id='img' src='/static/savedImage.jpg' alt='Lamp' width='320' height='320'/ -->
+    </body>
+</html>
+
+function createWindow(src, width, height){
+    var win = window.open(src, "_new", "width="+width+",height="+height);
+    win.addEventListener("resize", function(){
+        console.log("Resized");
+		win.resizeTo(width, height);
+    });
+}
+
+createWindow("about:blank", 500, 300);
+
+      <div onclick="startButton(event);"><img alt="Start" id="start_img" src="https://speechlogger.appspot.com/images/micoff2.png"></div>
+
+       <button id="button" onclick="welcome('hi');">test</button>

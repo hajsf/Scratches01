@@ -1,0 +1,71 @@
+ fonix-menu{
+    display: '';
+    position: absolute;
+    font-family:'RobotoBold'; font-weight:300;
+    background-attachment: fixed;
+    background-color: #FFFFFF;
+    filter: none;
+    top: 30px;
+    left: 2px;
+    width: 210px;
+    bottom:30px;
+    margin: 0px;
+
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1rem;
+    border-radius: 2px;
+    border: 1px solid #BCC1C8;
+    z-index:1;
+    color:#6E6E6E;
+    font-weight:110;
+    font-size:15px;
+    font-family:'RobotoThin';
+}
+
+fonix-menu::shadow .ion-android-promotion:before{font-family:"Ionicons"; content:"\f2f2";}
+fonix-menu::shadow .ion-android-contacts:before{font-family:"Ionicons"; content:"\f2d9";}
+fonix-menu::shadow .ion-android-archive:before{font-family:"Ionicons"; content:"\f2c9";}
+fonix-menu::shadow .ion-ios-pulse-strong:before{font-family:"Ionicons"; content:"\f492";}
+
+fonix-menu::shadow .menulabel{
+    display:block;
+    padding: 10px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    height: 18px;
+    line-height: 20.5px;
+}
+
+fonix-menu::shadow .menulabel:hover{
+  cursor: pointer;
+  background-color: #FF7F2F;
+}
+
+
+fonix-fab img{
+  width: 20px;
+  height: 20px;
+}
+fonix-fab, fonix-order::shadow fonix-fab {
+  display : inline-block;
+  position : fixed;
+  right : 25px;
+  bottom : 25px;
+  outline : none;
+  cursor : pointer;
+  z-index : 1;
+  width : 36px;
+  height : 36px;
+  background : #DB4437;
+  color : #fff;
+  border-radius : 50%;
+  padding-top : 12px;
+  padding-left : 12px;
+  /*box-shadow : 0px 0px 5px #888888;*/
+}
+
+fonix-fab:hover, fonix-order::shadow fonix-fab:hover{
+  box-shadow : 0px 0px 10px #888888;
+}
+
+fonix-fab:Active, , fonix-order::shadow fonix-fab:Active {background: #ffd9cc;}

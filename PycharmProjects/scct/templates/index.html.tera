@@ -1,0 +1,5 @@
+{% extends "base" %}
+{% block content %}
+<script src="static/js/script.js"></script>
+    Context value: {{ value }}
+{% endblock content %}

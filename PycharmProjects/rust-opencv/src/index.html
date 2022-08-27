@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <header>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <script>
+        /* play video twice as fast */
+        // document.querySelector('vid').defaultPlaybackRate = 2.0;
+        // document.querySelector('vid').play();
+        /* now play three times as fast just for the heck of it */
+        // document.querySelector('vid').playbackRate = 3.0;
+        function refresh(){
+            var dt = new Date();
+            img = document.getElementById("img");
+            img.src="savedImage.jpg"+ "?" + dt.getTime();
+            document.getElementById('vid').play();
+        }
+        //      document.getElementById('vid').play();},1000);
+       </script>
+    </header>
+    <body>
+        <button onclick="external.invoke('open')">Run</button>
+        <button onclick="external.invoke('close')">Close</button><br>
+        <br>
+        <video width="320" height="240" preload="none" loop controls autoplay muted id="vid">
+            <source src="output.mp4" type="video/mp4">
+        </video>
+        <img id="img" width="320" height="240" src="savedImage.jpg">
+    </body>
+</html>

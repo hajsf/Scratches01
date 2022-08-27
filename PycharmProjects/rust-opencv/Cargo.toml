@@ -1,0 +1,13 @@
+[package]
+name = "rust-opencv"
+version = "0.1.0"
+authors = ["Yara Yousef"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+opencv = {version = "0.36", features = ["buildtime-bindgen"]}
+web-view = {version = "0.6.0"}
+rocket = "0.4.4"
+rocket_contrib = "0.4.4"

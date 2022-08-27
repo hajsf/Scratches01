@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <Title>Supply Chain Control Tower</Title>
+
+        <script>
+        </script>
+    </head>
+    <body oncontextmenu = "context();">
+        <button onclick="exit(0)">Exit the app</button>
+        {% block content %}
+        {% endblock content %}
+
+
+    </body>
+</html>

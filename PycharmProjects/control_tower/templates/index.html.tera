@@ -1,0 +1,33 @@
+{% extends "base" %}
+{% block content %}
+
+<style>
+#myDIV {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+
+#DIV2 {
+  position: relative;
+  top: 130px;
+  left: 30px;
+  width: 300px;
+  height: 150px;
+  background-color: coral;
+  border: 1px solid black;
+}
+</style>
+
+<div id="DIV2">
+  <h1>Voila!</h1>
+</div>
+
+<div id="myDIV">
+</div>
+
+
+
+{% endblock content %}

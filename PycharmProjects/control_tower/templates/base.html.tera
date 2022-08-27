@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <Title>Supply Chain Control Tower</Title>
+        <link href="static/styles/main.css" rel="stylesheet"/>
+        <script defer src="static/scripts/main.js"></script>
+
+        <script>
+        </script>
+    </head>
+    <body oncontextmenu = "context();">
+      <header>
+      <div style="position: absolute; left: 5px; bottom: 2px;" >
+        <span id="menuLines" style="bottom: 15px;"></span>
+        <font style="font-family:'openSansExtraBoldItalic';font-weight:800;" id='brand'>{{ org_short_name }}</font>
+        <font style="font-family:'openSansLight';font-weight:20;" id='name'>{{ org_long_name }}</font>
+      </div>
+        <div style="position: absolute; right: 5px; bottom: 2px;" >
+          <live-timer id="timer" hour="numeric" minute="numeric" second="numeric"></live-timer>
+          <button onclick="exit(0)">Exit the app</button>
+        </div>
+    </header>
+    <side-menu id='menu' data-show = false></side-menu>
+        {% block content %}
+        {% endblock content %}
+    <footer id='fonix-footer'></footer>
+    </body>
+</html>
