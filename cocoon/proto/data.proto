@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package protobuf;
+option go_package = "/proto";
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+service StreamService {
+  rpc WaMessageStreame (google.protobuf.Empty) returns (stream Response) {
+    option (google.api.http) = {
+      get: "/v1/rawdata/stream"
+    };
+  }
+}
+
+message Empty{}
+
+message Response {
+  string senderType = 1;
+  string messageGroup = 2;
+  string messageSender = 3;
+  string senderName = 4;
+  string messageTime = 5;
+  string messageID = 6;
+  string messageType = 7;
+  string messageText = 8;
+  string messageCaption = 9;
+  string messageUri = 10;
+}
